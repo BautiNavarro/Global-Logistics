@@ -20,8 +20,8 @@ Cliente ──► NGINX :8080 ──────┼──► api (réplica 2)
 ## 1. Levantar el entorno
 
 ```bash
-git clone <URL-DEL-REPO>
-cd tp3-globallogistics
+git clone https://github.com/BautiNavarro/Global-Logistics.git
+cd Global-Logistics
 docker compose up -d --build
 ```
 
