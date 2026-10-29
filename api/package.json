@@ -1,0 +1,12 @@
+{
+  "name": "globallogistics-shipment-api",
+  "version": "1.0.0",
+  "description": "Microservicio de prueba para el TP3 de Arquitectura de Sistemas",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "4.21.2"
+  }
+}
