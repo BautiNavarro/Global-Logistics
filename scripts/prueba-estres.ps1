@@ -1,4 +1,4 @@
-# Pruebas de estrés — TP3 GlobalLogistics (Windows / PowerShell)
+﻿# Pruebas de estrés — TP3 GlobalLogistics (Windows / PowerShell)
 # Ejecuta Apache Benchmark DENTRO de un contenedor (no hace falta instalar ab)
 # y guarda cada reporte en la carpeta results\.
 #

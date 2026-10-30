@@ -1,4 +1,4 @@
-# Muestra que peticiones consecutivas son atendidas por distintas réplicas.
+﻿# Muestra que peticiones consecutivas son atendidas por distintas réplicas.
 # Uso: powershell -ExecutionPolicy Bypass -File .\scripts\verificar-balanceo.ps1
 1..9 | ForEach-Object {
     $r = Invoke-RestMethod -Uri "http://localhost:8080/"
