@@ -1,0 +1,60 @@
+﻿This is ApacheBench, Version 2.3 <$Revision: 1934973 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking load-balancer (be patient)
+docker : Completed 300 requests
+En C:\Users\bauti\OneDrive\Escritorio\Global-Logistics\scripts\prueba-estres.ps1: 18 Carácter: 5
++     docker run --rm --network $Red $AbImg ab -l -s 30 -n $n -c $c "$L ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Completed 300 requests:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Completed 600 requests
+Completed 900 requests
+Completed 1200 requests
+Completed 1500 requests
+Completed 1800 requests
+Completed 2100 requests
+Completed 2400 requests
+Completed 2700 requests
+Completed 3000 requests
+Finished 3000 requests
+
+
+Server Software:        nginx/1.28.3
+Server Hostname:        load-balancer
+Server Port:            80
+
+Document Path:          /cotizar
+Document Length:        Variable
+
+Concurrency Level:      500
+Time taken for tests:   20.178 seconds
+Complete requests:      3000
+Failed requests:        0
+Non-2xx responses:      2668
+Total transferred:      1035011 bytes
+HTML transferred:       444772 bytes
+Requests per second:    148.68 [#/sec] (mean)
+Time per request:       3362.950 [ms] (mean)
+Time per request:       6.726 [ms] (mean, across all concurrent requests)
+Transfer rate:          50.09 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0   45  19.4     47      79
+Processing:     7 1918 3766.4     61   11067
+Waiting:        3 1903 3767.4     37   11067
+Total:          7 1963 3758.0    111   11118
+
+Percentage of the requests served within a certain time (ms)
+  50%    111
+  66%    117
+  75%    351
+  80%   1748
+  90%  10070
+  95%  10098
+  98%  10111
+  99%  10117
+ 100%  11118 (longest request)

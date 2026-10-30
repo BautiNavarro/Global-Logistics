@@ -1,0 +1,42 @@
+﻿This is ApacheBench, Version 2.3 <$Revision: 1934973 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking load-balancer (be patient)
+
+
+Server Software:        nginx/1.28.3
+Server Hostname:        load-balancer
+Server Port:            80
+
+Document Path:          /cotizar?n=2000
+Document Length:        Variable
+
+Concurrency Level:      100
+Time taken for tests:   9.605 seconds
+Complete requests:      2000
+Failed requests:        0
+Total transferred:      686000 bytes
+HTML transferred:       154000 bytes
+Requests per second:    208.23 [#/sec] (mean)
+Time per request:       480.243 [ms] (mean)
+Time per request:       4.802 [ms] (mean, across all concurrent requests)
+Transfer rate:          69.75 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   2.0      0      13
+Processing:     3  446 1035.7    182    7847
+Waiting:        2  446 1035.7    182    7847
+Total:          3  446 1035.6    183    7847
+
+Percentage of the requests served within a certain time (ms)
+  50%    183
+  66%    270
+  75%    422
+  80%    505
+  90%    893
+  95%   1200
+  98%   4658
+  99%   7053
+ 100%   7847 (longest request)

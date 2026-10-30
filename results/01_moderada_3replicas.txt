@@ -1,0 +1,86 @@
+﻿docker : Unable to find image 'httpd:2.4-alpine' locally
+En C:\Users\bauti\OneDrive\Escritorio\Global-Logistics\scripts\prueba-estres.ps1: 18 Carácter: 5
++     docker run --rm --network $Red $AbImg ab -l -s 30 -n $n -c $c "$L ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Unable to find ...alpine' locally:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+2.4-alpine: Pulling from library/httpd
+8fa5871deb7f: Pulling fs layer
+8653f63a2a1a: Pulling fs layer
+f55ab9d5f59a: Pulling fs layer
+2eb41f39407f: Pulling fs layer
+ca8079233535: Pulling fs layer
+7b229517ed22: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+4f4fb700ef54: Already exists
+ac03b5fe9bbf: Download complete
+ca8079233535: Download complete
+2eb41f39407f: Download complete
+4f7ae5ccbe66: Download complete
+8fa5871deb7f: Download complete
+7b229517ed22: Download complete
+f55ab9d5f59a: Download complete
+ca8079233535: Pull complete
+7b229517ed22: Pull complete
+4f4fb700ef54: Pull complete
+2eb41f39407f: Pull complete
+8653f63a2a1a: Download complete
+8653f63a2a1a: Pull complete
+8fa5871deb7f: Pull complete
+f55ab9d5f59a: Pull complete
+Digest: sha256:070da7661f0be8a05430b2c125c0cde9e53176b4048c813024021969a0e3893c
+Status: Downloaded newer image for httpd:2.4-alpine
+This is ApacheBench, Version 2.3 <$Revision: 1934973 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking load-balancer (be patient)
+Completed 500 requests
+Completed 1000 requests
+Completed 1500 requests
+Completed 2000 requests
+Completed 2500 requests
+Completed 3000 requests
+Completed 3500 requests
+Completed 4000 requests
+Completed 4500 requests
+Completed 5000 requests
+Finished 5000 requests
+
+
+Server Software:        nginx/1.28.3
+Server Hostname:        load-balancer
+Server Port:            80
+
+Document Path:          /
+Document Length:        Variable
+
+Concurrency Level:      100
+Time taken for tests:   3.461 seconds
+Complete requests:      5000
+Failed requests:        0
+Total transferred:      1875000 bytes
+HTML transferred:       540000 bytes
+Requests per second:    1444.75 [#/sec] (mean)
+Time per request:       69.216 [ms] (mean)
+Time per request:       0.692 [ms] (mean, across all concurrent requests)
+Transfer rate:          529.08 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   1.8      1      15
+Processing:     0   65 176.3     20    2308
+Waiting:        0   64 176.3     20    2308
+Total:          1   66 176.2     22    2308
+
+Percentage of the requests served within a certain time (ms)
+  50%     22
+  66%     63
+  75%     82
+  80%     88
+  90%    108
+  95%    168
+  98%    413
+  99%    992
+ 100%   2308 (longest request)
