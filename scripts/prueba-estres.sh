@@ -30,6 +30,7 @@ sleep 5
 echo "== ESCENARIO 1: concurrencia moderada (3 réplicas) =="
 correr_ab "01_moderada_3replicas"        5000   100 "/"
 correr_ab "02_moderada_cpu_3replicas"    2000   100 "/cotizar"
+correr_ab "07_moderada_cpu_liviana_3replicas" 2000 100 "/cotizar?n=2000"
 
 echo "== ESCENARIO 2: concurrencia extrema / saturación (3 réplicas) =="
 echo "   (Tip: en otra terminal corré 'docker stats' y sacá captura del CPU)"
@@ -41,6 +42,7 @@ docker compose up -d --scale api=1
 sleep 8
 docker compose restart load-balancer && sleep 3
 correr_ab "05_moderada_cpu_1replica"     2000   100 "/cotizar"
+correr_ab "08_moderada_cpu_liviana_1replica" 2000 100 "/cotizar?n=2000"
 correr_ab "06_extrema_cpu_1replica"      3000   500 "/cotizar"
 
 echo "== Volviendo a 3 réplicas =="

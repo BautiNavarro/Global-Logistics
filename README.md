@@ -73,6 +73,8 @@ El script ejecuta estos escenarios y guarda cada reporte de `ab` en `results/`:
 | 04 | Extrema con CPU (saturación), 3 réplicas | 3.000 | 500 | `/cotizar` |
 | 05 | Moderada con CPU, **1 réplica** | 2.000 | 100 | `/cotizar` |
 | 06 | Extrema con CPU, **1 réplica** | 3.000 | 500 | `/cotizar` |
+| 07 | Moderada con CPU liviana, 3 réplicas | 2.000 | 100 | `/cotizar?n=2000` |
+| 08 | Moderada con CPU liviana, **1 réplica** | 2.000 | 100 | `/cotizar?n=2000` |
 
 Al final genera `results/resumen.md` con latencia promedio, p50, p95, p99, máxima y porcentaje de errores de cada escenario.
 
@@ -93,7 +95,7 @@ docker stats
 
 ```bash
 docker compose ps                     # anotar el nombre de una réplica
-docker stop tp3-globallogistics-api-2 # "matar" una réplica
+docker stop tp3-globallogistics-api-2  # "matar" una réplica
 ./scripts/verificar-balanceo.sh       # el tráfico sigue, repartido entre las 2 que quedan
 docker start tp3-globallogistics-api-2
 ```

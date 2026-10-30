@@ -18,7 +18,7 @@ const filas = archivos.map((f) => {
     concurrencia: num(t, /Concurrency Level:\s+(\d+)/),
     peticiones: num(t, /Complete requests:\s+(\d+)/),
     rps: num(t, /Requests per second:\s+([\d.]+)/),
-    promedio: num(t, /Time per request:\s+([\d.]+) \[ms\] \(mean\)\n/),
+    promedio: num(t, /Time per request:\s+([\d.]+) \[ms\] \(mean\)\r?\n/),
     p50: num(t, /\n\s+50%\s+(\d+)/),
     p95: num(t, /\n\s+95%\s+(\d+)/),
     p99: num(t, /\n\s+99%\s+(\d+)/),
@@ -27,11 +27,11 @@ const filas = archivos.map((f) => {
   };
 });
 
-const v = (x) => (x === null ? '—' : x);
-console.log('| Escenario | Concurrencia | Peticiones | Req/s | Promedio (ms) | p50 (ms) | p95 (ms) | p99 (ms) | Máx (ms) | Errores |');
+const v = (x) => (x === null ? '-' : x);
+console.log('| Escenario | Concurrencia | Peticiones | Req/s | Promedio (ms) | p50 (ms) | p95 (ms) | p99 (ms) | Max (ms) | Errores |');
 console.log('| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |');
 for (const r of filas) {
-  const pctErr = r.peticiones ? ((r.fallidas / r.peticiones) * 100).toFixed(1) + '%' : '—';
+  const pctErr = r.peticiones ? ((r.fallidas / r.peticiones) * 100).toFixed(1) + '%' : '-';
   console.log(
     `| ${r.escenario} | ${v(r.concurrencia)} | ${v(r.peticiones)} | ${v(r.rps)} | ${v(r.promedio)} | ` +
       `${v(r.p50)} | ${v(r.p95)} | ${v(r.p99)} | ${v(r.max)} | ${r.fallidas} (${pctErr}) |`

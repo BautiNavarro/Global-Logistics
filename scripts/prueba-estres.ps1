@@ -31,6 +31,7 @@ Start-Sleep 5
 Write-Host "== ESCENARIO 1: concurrencia moderada (3 réplicas) ==" -ForegroundColor Yellow
 Correr-AB "01_moderada_3replicas"       5000  100 "/"
 Correr-AB "02_moderada_cpu_3replicas"   2000  100 "/cotizar"
+Correr-AB "07_moderada_cpu_liviana_3replicas" 2000 100 "/cotizar?n=2000"
 
 Write-Host "== ESCENARIO 2: concurrencia extrema / saturación (3 réplicas) ==" -ForegroundColor Yellow
 Write-Host "   (Tip: en otra terminal corré 'docker stats' y sacá captura del CPU)"
@@ -42,6 +43,7 @@ docker compose up -d --scale api=1
 Start-Sleep 8
 docker compose restart load-balancer; Start-Sleep 3
 Correr-AB "05_moderada_cpu_1replica"    2000  100 "/cotizar"
+Correr-AB "08_moderada_cpu_liviana_1replica" 2000 100 "/cotizar?n=2000"
 Correr-AB "06_extrema_cpu_1replica"     3000  500 "/cotizar"
 
 Write-Host "== Volviendo a 3 réplicas ==" -ForegroundColor Yellow
